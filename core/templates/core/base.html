@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}other {% endblock title %}</title>
+  {% block corecss%}
+  <link rel="stylesheet" href="{% static 'core/css/core.css' %}">
+  {% endblock corecss%}
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</li>
+            <li><a href="{% url 'aboutus' %}">About</li>
+            <li><a href="/cor/django">Django Course</li>
+            <li><a href="{% url 'courseone' %}">Django Course</li>
+        </ul>
+    </nav>
+    {% block content %} {% endblock content %}
+</body>
+</html>
